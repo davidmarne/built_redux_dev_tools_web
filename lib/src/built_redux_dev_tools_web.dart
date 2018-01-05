@@ -16,9 +16,9 @@ class ReduxDevTools {
 
   ReduxDevTools(
     this._store, {
-    Element mount,
+    // Element mount,
     bool showImmediately: true,
-    Iterable<int> showHide: const <int>[KeyCode.CTRL, KeyCode.D],
+    Iterable<int> showHide: const <int>[KeyCode.CTRL, KeyCode.I],
     // Iterable<Controls> controls: Controls.values,
   }) {
     _devToolsStore = new Store<App, AppBuilder, AppActions>(
@@ -36,7 +36,10 @@ class ReduxDevTools {
     window.onKeyDown.listen((e) {
       if (!showHide.contains(e.keyCode)) return;
       keyHeldDown.add(e.keyCode);
-      if (showHide.every(keyHeldDown.contains)) _showHideWindow();
+      if (showHide.every(keyHeldDown.contains)) {
+        _showHideWindow();
+        keyHeldDown.clear();
+      }
     });
 
     window.onKeyUp.listen((e) {
