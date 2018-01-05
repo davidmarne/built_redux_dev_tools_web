@@ -1,0 +1,15 @@
+name: built_redux_dev_tools_web
+version: 0.0.1
+description:
+   built_redux dev tool extension for web apps
+authors:
+- David Marne <davemarne@gmail.com>
+homepage: https://github.com/davidmarne/built_redux_dev_tools_web
+dependencies:
+  built_redux: '>=6.0.0 <8.0.0'
+  built_redux_dev_tools: ^0.0.1
+  wui_builder: ^0.3.1
+  js: ^0.6.1
+
+environment:
+  sdk: ">=1.17.1 <2.0.0"
